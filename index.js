@@ -3,7 +3,7 @@ const request = require("request"),
 
 exports.saldo = function (cardNumber, matricula, offset) {
   return new Promise(function (resolve, reject) {
-    const optionsTopGames = {
+    const options = {
       method: "POST",
       url:
         "https://si3.ufc.br/public/restauranteConsultarSaldo.do?codigoCartao=" +
@@ -16,7 +16,7 @@ exports.saldo = function (cardNumber, matricula, offset) {
       },
     };
 
-    request(optionsTopGames, function (error, response) {
+    request(options, function (error, response) {
       if (error) throw new Error(error);
       const res = response.body;
       
@@ -50,7 +50,7 @@ exports.saldo = function (cardNumber, matricula, offset) {
       } else {
         resp = {
           nome,
-          creditos,
+          creditos
         };
 
         resolve(resp);
