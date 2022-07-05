@@ -11,7 +11,7 @@ Pacote que checa o saldo do cartão do Restaurante Universitário - UFC.
 ## Exemplo de uso
 
 ```js
-const saldoRU = require('./index');
+const saldoRU = require('saldo-ru-ufc');
 
 saldoRU.saldo(NUMERO_CARTAO, NUMERO_MATRICULA).then(res => {
   console.log(res);
