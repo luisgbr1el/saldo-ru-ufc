@@ -8,6 +8,11 @@ Pacote que checa o saldo do cartão do Restaurante Universitário - UFC.
 [![GitHub stars](https://img.shields.io/github/stars/luisgbr1el/saldo-ru-ufc?style=flat-square)](https://github.com/luisgbr1el/saldo-ru-ufc/stargazers)
 [![GitHub license](https://img.shields.io/github/license/luisgbr1el/saldo-ru-ufc?style=flat-square)](https://github.com/luisgbr1el/saldo-ru-ufc)
 
+## Instalação (via NPM)
+```git
+npm install saldo-ru-ufc
+```
+
 ## Exemplo de uso
 
 ```js

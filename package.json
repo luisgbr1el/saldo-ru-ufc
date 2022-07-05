@@ -1,6 +1,6 @@
 {
   "name": "saldo-ru-ufc",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Pacote que checa o saldo do cartão do Restaurante Universitário - UFC SIPAC",
   "main": "index.js",
   "repository": {
