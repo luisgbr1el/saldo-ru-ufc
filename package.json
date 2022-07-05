@@ -1,0 +1,27 @@
+{
+  "name": "saldo-ru-sipac",
+  "version": "1.0.0",
+  "description": "Pacote que checa o saldo do cartão do Restaurante Universitário - UFC SIPAC",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luisgbr1el/saldo-ru-sipac.git"
+  },
+  "keywords": [
+    "ru",
+    "restaurante",
+    "ufc",
+    "ufc-crateus",
+    "node-js"
+  ],
+  "author": "luisgbr1el",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/luisgbr1el/saldo-ru-sipac/issues"
+  },
+  "homepage": "https://github.com/luisgbr1el/saldo-ru-sipac#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "request": "^2.88.2"
+  }
+}
