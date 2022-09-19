@@ -39,8 +39,31 @@ exports.saldo = function (cardNumber, matricula, offset) {
         credits.push($(element).text());
       });
 
+
+      lastOperationDate = $("table.listagem tbody").last().children("tr").children("td").first().text();
+      lastOperationDate = lastOperationDate.replace(/-/g, "/");
+
+      lastOperationType = $("table.listagem tbody").last().children("tr").children("td:nth-child(2)").first().text();
+      lastOperationType = lastOperationType
+        .replace(/\t|\n/g, "")
+        .replace("Utiliza��o", "Utilização")
+        .replace("Cart�o", "Cartão").replace("Cr�ditos", "Créditos")
+
+      lastOperationDetails = $("table.listagem tbody").last().children("tr").children("td:nth-child(3)").first().text();
+      lastOperationDetails = lastOperationDetails
+        .replace(/\t|\n/g, "")
+        .replace("Cr�ditos", "Créditos")
+        .replace("Refei��o", "Refeição")
+        .replace("Almo�o", "Almoço")
+
+      if (lastOperationDetails.includes("Qtd. Antes"))
+        lastOperationDetails = lastOperationDetails.replace("Qtd. Antes", "\nQtd. Antes")
+      
       const nome = name[1],
-        creditos = parseInt(credits[1]);
+        creditos = parseInt(credits[1]),
+        dataUltimaOperacao = lastOperationDate,
+        tipoUltimaOperacao = lastOperationType,
+        detalhesUltimaOperacao = lastOperationDetails;
 
       if (nome === undefined) {
         const err =
@@ -50,7 +73,12 @@ exports.saldo = function (cardNumber, matricula, offset) {
       } else {
         resp = {
           nome,
-          creditos
+          creditos,
+          ultimaOperacao: {
+            data: dataUltimaOperacao,
+            tipo: tipoUltimaOperacao,
+            detalhes: detalhesUltimaOperacao
+          }    
         };
 
         resolve(resp);

@@ -23,9 +23,14 @@ saldoRU.saldo(NUMERO_CARTAO, NUMERO_MATRICULA).then(res => {
 
 ## Exemplo de resposta
 
-```JSON
+```
 {
   nome: "MARIA EDUARDA SILVA",
-  creditos: 13
+  creditos: 13,
+  ultimaOperacao: {
+    data: '19/09/2022 10:23:33',
+    tipo: 'Compra de Créditos',
+    detalhes: 'Qtd. Créditos: 30 Qtd. Antes: 1 / Qtd. Depois: 31'
+  }
 }
 ```
